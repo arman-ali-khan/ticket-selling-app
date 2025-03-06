@@ -1,8 +1,6 @@
-'use client';
-
 import * as React from 'react';
 import { PDFViewer, Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
-import { useSearchParams } from 'next/navigation';
+import { useLocation } from 'react-router-dom';
 
 const styles = StyleSheet.create({
   page: {
@@ -123,7 +121,8 @@ const styles = StyleSheet.create({
 });
 
 const TicketPDF = () => {
-  const searchParams = useSearchParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
   const ticketData = JSON.parse(decodeURIComponent(searchParams.get('data') || '{}'));
 
   const formatDate = (date: string) => {

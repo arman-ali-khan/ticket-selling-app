@@ -1,19 +1,17 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+} from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Separator } from "../components/ui/separator";
 import { Trash2, Plus, Sparkles } from "lucide-react";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 interface LotteryTicket {
   id: number;
@@ -27,7 +25,7 @@ interface UserInfo {
 }
 
 export default function BuyTicketsPage() {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState<UserInfo>({
     name: "",
     phone: "",
@@ -105,7 +103,7 @@ export default function BuyTicketsPage() {
     };
     
     const encodedData = encodeURIComponent(JSON.stringify(ticketData));
-    router.push(`/buy-tickets/preview?data=${encodedData}`);
+    navigate(`/buy-tickets/preview?data=${encodedData}`);
   };
 
   return (
