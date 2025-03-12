@@ -14,6 +14,14 @@ export function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [balance, setBalance] = useState(0);
 
+  // Function to scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   // Check if user is logged in and fetch balance
   useEffect(() => {
     // This is a placeholder - in a real app, you'd check auth status
@@ -34,7 +42,11 @@ export function Navbar() {
     <header className="sticky px-4 top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <div className="mr-4  md:flex">
-          <Link to="/" className="mr-6 flex items-center space-x-2">
+          <Link 
+            to="/" 
+            className="mr-6 flex items-center space-x-2"
+            onClick={scrollToTop}
+          >
             <img src="/images/logo.png" alt="Logo" className="h-6 w-6" />
             <span className="hidden font-bold sm:inline-block">
               Lottery System

@@ -9,6 +9,7 @@ import ProfilePage from './pages/profile';
 import ResultsPage from './pages/results';
 import AddFundsPage from './pages/add-funds';
 import BuyTicketsUserPage from './pages/buy-tickets/customer';
+import WinnersPage from "./pages/winners";
 // admin
 import UsersPage from './pages/UsersPage';
 import TicketsPage from './pages/TicketsPage';
@@ -48,6 +49,7 @@ function App() {
           <Route path="affiliates" element={<AffiliatesPage />} />
           <Route path="settings" element={<SettingsPage />} />
         </Route>
+        <Route path="/winners" element={<WinnersPage />} />
       </Routes>
     </>
   );

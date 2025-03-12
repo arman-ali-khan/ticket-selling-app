@@ -19,7 +19,7 @@ function Event() {
 
 
   const totalTickets = 100;
-  const remainingTickets = 22; // Example value, you can fetch this dynamically
+  const remainingTickets = 77; // Example value, you can fetch this dynamically
 
     return (
               <div className="mt-16 mb-16">
@@ -187,7 +187,7 @@ function Event() {
                   <p className="text-muted-foreground">{remainingTickets} tickets remaining</p>
                   {/* Progress Bar for Remaining Tickets */}
                   <div className="w-full bg-gray-400 rounded-full h-4 mt-2">
-                    <div className="bg-red-500 h-4 rounded-full" style={{ width: `${(remainingTickets / totalTickets) * 100}%` }}></div>
+                    <div className={`${remainingTickets >= 90 && 'bg-green-500' || remainingTickets >= 80 && 'bg-blue-500' || remainingTickets >= 70 && 'bg-purple-500' || remainingTickets >= 60 && 'bg-lime-500' || remainingTickets >= 50 && 'bg-sky-500' || remainingTickets >= 40 && 'bg-emerald-500' || remainingTickets >= 30 && 'bg-orange-500' || remainingTickets >= 20 && 'bg-yellow-500' || remainingTickets >= 10 && 'bg-red-500' ||remainingTickets >= 0 && 'bg-black-500'} h-4 rounded-full`} style={{ width: `${(remainingTickets / totalTickets) * 100}%` }}></div>
                   </div>
                 </div>
                 <Button variant="destructive">Buy Limited Ticket</Button>
