@@ -16,12 +16,7 @@ function Event() {
     navigate(`/${customerType==='me'?'buy-tickets':'buy-tickets/customer'}?event=${event}&customer=${customerType}`);
   };
 
-  const events = [
-    { id: "weekly", name: "Weekly Draw", prize: "$500,000" },
-    { id: "monthly", name: "Monthly Special", prize: "$2,500,000" },
-    { id: "eid", name: "Eid Celebration", prize: "$1,500,000" },
-    { id: "hundred", name: "100 Tickets Bonanza", prize: "$100,000" },
-  ];
+
 
   const totalTickets = 100;
   const remainingTickets = 22; // Example value, you can fetch this dynamically

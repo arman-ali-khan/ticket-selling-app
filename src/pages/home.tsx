@@ -1,12 +1,12 @@
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "../components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Ticket } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "../components/ui/dialog";
 import { useNavigate } from "react-router-dom";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../components/ui/dropdown-menu";
+
 
 import Testimonial from "./home/Testimonial";
 import Event from "../components/Event";
